@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-may-2015 20:35:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Catalogo" table="CATALOGO" schema="GRUPO8" optimistic-lock="version">
+        <id name="idCatalogo" type="int">
+            <column name="ID_CATALOGO" precision="6" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tipoCatalogo" class="model.TipoCatalogo" fetch="select">
+            <column name="ID_TIPO_CATALOGO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="50" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="150" />
+        </property>
+        <set name="proveedors" table="PROVEEDOR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CATALOGO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.Proveedor" />
+        </set>
+        <set name="transaccions" table="TRANSACCION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CATALOGO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.Transaccion" />
+        </set>
+        <set name="devolucions" table="DEVOLUCION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CATALOGO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.Devolucion" />
+        </set>
+        <set name="usuarios" table="USUARIO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CATALOGO" precision="6" scale="0" />
+            </key>
+            <one-to-many class="model.Usuario" />
+        </set>
+        <set name="productos" table="PRODUCTO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CATALOGO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.Producto" />
+        </set>
+    </class>
+</hibernate-mapping>

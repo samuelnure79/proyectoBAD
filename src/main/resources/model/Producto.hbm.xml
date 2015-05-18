@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-may-2015 20:35:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Producto" table="PRODUCTO" schema="GRUPO8" optimistic-lock="version">
+        <id name="idProducto" type="int">
+            <column name="ID_PRODUCTO" precision="6" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="catalogo" class="model.Catalogo" fetch="select">
+            <column name="ID_CATALOGO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="detalleProducto" class="model.DetalleProducto" fetch="select">
+            <column name="ID_DETALLE_PRODUCTO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="proveedor" class="model.Proveedor" fetch="select">
+            <column name="ID_PROVEEDOR" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="nombre4" type="string">
+            <column name="NOMBRE4" length="50" not-null="true" />
+        </property>
+        <property name="costo" type="big_decimal">
+            <column name="COSTO" precision="8" not-null="true" />
+        </property>
+        <property name="codigoProducto" type="string">
+            <column name="CODIGO_PRODUCTO" length="7" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="150" />
+        </property>
+        <set name="detalleDevolucions" table="DETALLE_DEVOLUCION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_PRODUCTO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.DetalleDevolucion" />
+        </set>
+        <set name="detallePedidos" table="DETALLE_PEDIDO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_PRODUCTO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.DetallePedido" />
+        </set>
+        <set name="detalleDeOrdenCompras" table="DETALLE_DE_ORDEN_COMPRA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_PRODUCTO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.DetalleDeOrdenCompra" />
+        </set>
+        <set name="detalleRequisicions" table="DETALLE_REQUISICION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_PRODUCTO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.DetalleRequisicion" />
+        </set>
+    </class>
+</hibernate-mapping>
