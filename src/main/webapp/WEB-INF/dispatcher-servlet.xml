@@ -21,6 +21,7 @@
             <props>
                 <prop key="index.htm">indexController</prop>
                 <prop key="tipoCatalogo.htm">tipoCatalogoController</prop>
+                <prop key="usuario.htm">UsuarioController</prop>
             </props>
         </property>
     </bean>
@@ -32,6 +33,10 @@
     
     <bean id="tipoCatalogoController"
           class="controller.TipoCatalogoController"
+          />
+    
+    <bean id="UsuarioController"
+          class="controller.UsuarioController"
           />
 
     <!--
