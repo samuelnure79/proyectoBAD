@@ -108,6 +108,11 @@
             <version>2.7.2</version>
         </dependency>
         <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.faces</artifactId>
+            <version>2.2.7</version>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -118,6 +123,14 @@
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0.2.0</version>
         </dependency>
+        
+        <!-- Esta es la dependencia para utilizar PrimeFaces  -->
+        <dependency>  
+            <groupId>org.primefaces</groupId>  
+            <artifactId>primefaces</artifactId>  
+            <version>5.2</version>  
+        </dependency>
+        
     </dependencies>
 
     <build>
@@ -174,6 +187,15 @@
             <id>unknown-jars-temp-repo</id>
             <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
             <url>file:${project.basedir}/lib</url>
+        </repository>
+        
+     
+<!--Este es el repositorio de Primefaces -->
+        <repository>          
+            <id>prime-repo</id>  
+            <name>PrimeFaces Maven Repository</name>  
+            <url>http://repository.primefaces.org</url>  
+            <layout>default</layout>  
         </repository>
     </repositories>
 </project>

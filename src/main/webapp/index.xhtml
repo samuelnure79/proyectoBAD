@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <a href="usuario.htm">Vista de Usuario</a>
+         <a href="tipoCatalogo.htm">Vista de Tipo Catalogo</a>
+ 
+        <p:button value="Bookmark" icon="ui-icon-star">
+            <f:param name="productId" value="10" />
+        </p:button>
+        <br />
+        <br />
+        <p:outputLabel value="Simple:" for="acSimple" />
+        <p:autoComplete id="acSimple" value="algo" completeMethod="sfd" />
+
+        <br />
+        <br />
+        <p:dataTable var="car" value="fgdg">
+            <p:column headerText="Id">
+                <h:outputText value="dfgfdg" />
+            </p:column>
+
+            <p:column headerText="Year">
+                <h:outputText value="dfgfdg" />
+            </p:column>
+
+            <p:column headerText="Brand">
+                <h:outputText value="dfgdg" />
+            </p:column>
+
+            <p:column headerText="Color">
+                <h:outputText value="fgdf" />
+            </p:column>
+        </p:dataTable>
+
+        <br />
+        <br />
+
+
+
+        <p:panel header="Personal Details">
+            <h:panelGrid columns="2" columnClasses="label, value">
+
+                <p:dataTable id="tbl" var="car" value="sdfgsdf"
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                             paginator="true" rows="10" style="margin-bottom:20px">
+                    <f:facet name="dfgfdgf">
+                        <h:commandLink>
+                            <p:graphicImage name="/demo/images/excel.png" width="24"/>
+                            <p:dataExporter type="xls" target="tbl" fileName="cars" />
+                        </h:commandLink>
+
+                        <h:commandLink>
+                            <p:graphicImage name="/demo/images/pdf.png" width="24"/>
+                            <p:dataExporter type="pdf" target="tbl" fileName="cars"/>
+                        </h:commandLink>
+
+                        <h:commandLink>
+                            <p:graphicImage name="/demo/images/csv.png" width="24"/>
+                            <p:dataExporter type="csv" target="tbl" fileName="cars" />
+                        </h:commandLink>
+
+                        <h:commandLink>
+                            <p:graphicImage name="/demo/images/xml.png" width="24"/>
+                            <p:dataExporter type="xml" target="tbl" fileName="cars" />
+                        </h:commandLink>
+                    </f:facet>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id" />
+                        </f:facet>
+                        <h:outputText value="dfgfdg" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Year"/>
+                        </f:facet>
+                        <h:outputText value="dfgf" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Brand" />
+                        </f:facet>
+                        <h:outputText value="dfgfdgd" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Color" />
+                        </f:facet>
+                        <h:outputText value="dfgfdg" />
+                    </p:column>
+
+                </p:dataTable>
+
+            </h:panelGrid>
+
+            <p:toolbar>
+                <f:facet name="left">
+                    <p:commandButton type="button" title="Save" icon="ui-icon-disk" />
+                    <p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
+                    <p:commandButton type="button" title="Print" icon="ui-icon-print" />
+                </f:facet>
+            </p:toolbar>
+        </p:panel>
+       
+    </h:body>
+</html>
+
