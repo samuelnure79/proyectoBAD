@@ -7,13 +7,14 @@ model\Transaccion.class
 model\Cotizacion.class
 model\Persona.class
 model\Producto.class
-model\Pedido.class
 model\Requisicion.class
+model\Pedido.class
 model\OrdenDeCompra.class
 model\Devolucion.class
 model\Cliente.class
 model\Empleado.class
 model\TipoCatalogo.class
+controller\TelefonoController.class
 model\Proveedor.class
 model\Catalogo.class
 model\DetalleDeOrdenCompra.class
@@ -23,3 +24,4 @@ controller\TipoCatalogoController.class
 model\DetalleRequisicion.class
 controller\UsuarioController.class
 model\Telefono.class
+controller\PersonaController.class

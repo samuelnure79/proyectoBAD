@@ -10,6 +10,8 @@
 
     <body>
         <a href="tipoCatalogo.htm">Tipo Catalogo</a>
-          <a href="usuario.htm">Usuario</a>
+        <a href="usuario.htm">Usuario</a>
+        <a href="persona.htm">Persona</a>
+        <a href="telefono.htm">Telefono</a>
     </body>
 </html>
